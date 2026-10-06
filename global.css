@@ -7,6 +7,7 @@
   --contrast-color: #E8B873;
   --triadic-color: #A62A61;
   --extra-color: #F5F2EA;
+  --ring-color: #e123fa; 
 
   --radius: 1rem;
   --space-small: 0.5rem;
@@ -75,8 +76,36 @@ body {
 
 /* YOUR CODE: Lab 1 states (:hover, :focus-visible, :active) */
 
+/* Hover is used when the mouse hovers over to change something
+Active is used when something is actively selected and will change it until it is not selected
+Focus is used when you want something to be allowed to be selected with the keyboard
+Focus visible is what can be shown, so when you want to change the border color and stuff */
 
+.state-button,
+.state-link {
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.15s ease;
+}
 
+.state-button:hover,
+.state-button:focus { 
+  color: var(--extra-color);
+  background-color: var(--primary-color);
+}
+
+.state-link:hover,
+.state-link:focus-visible {
+  color: var(--triadic-color);
+}
+
+.state-button:focus-visible,
+.state-link:focus-visible {
+  outline: 3px solid var(--triadic-color);
+  outline-offset: 4px;
+}
+
+.state-button:active {
+  transform: scale(0.92);
+}
 
 /* ---------- Lab 2: The Timing Race ---------- */
 .race {
@@ -104,8 +133,29 @@ body {
 
 /* YOUR CODE: Lab 2 timing functions (one per racer) */
 
+.racer-linear {
+  transition-timing-function: linear;
+}
 
+.racer-ease {
+  transition-timing-function: ease;
+}
 
+.racer-ease-in {
+  transition-timing-function: ease-in;
+}
+
+.racer-ease-out {
+  transition-timing-function: ease-out;
+}
+
+.racer-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.racer-mine {
+  transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
 
 /* ---------- Lab 3: Transform Tiles ---------- */
 .tile-row {
