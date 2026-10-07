@@ -178,7 +178,35 @@ Focus visible is what can be shown, so when you want to change the border color 
 
 /* YOUR CODE: Lab 3 transforms (lift, grow, spin, tilt) */
 
+.tile {
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 10px 5px 5px transparent;
+}
 
+.tile-lift:hover, 
+.tile-life:focus-visible {
+  transform: translate(0, -5px);
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tile-grow:hover, 
+.tile-grow:focus-visible {
+
+  transform: scale(110%);
+}
+
+.tile-spin:hover, 
+.tile-spin:focus-visible {
+
+  transform: rotate(360deg);
+}
+
+.tile-tilt:hover, 
+.tile-tilt:focus-visible {
+
+  transform: scale(102%) rotate(20deg);
+  transform:rotate()
+}
 
 
 /* ---------- Lab 4: My Hover Gallery ---------- */
@@ -201,7 +229,51 @@ Focus visible is what can be shown, so when you want to change the border color 
 
 /* YOUR CODE: Lab 4, six effects */
 
+.effect-card {
+  transition: transform 0.4s ease-in-out;
+}
 
+.effect-1:hover,
+.effect-1:focus-visible {
+  transition: transform 2s ease;
+  background-color: aquamarine;
+  transform: scale(85%);
+  letter-spacing: 5px;
+}
+
+.effect-2:hover,
+.effect-2:focus-visible {
+  transition: transform .6s ease;
+  background-color: rgb(0, 238, 255);
+  transform: translateY(-30px);
+  border: 5px solid red;
+  border-radius: 1000px;
+}
+
+.effect-3:hover,
+.effect-3:focus-visible {
+  transform: rotate3d(1, 1, 0, 60deg);
+  transform-style: preserve-3d;
+}
+
+.effect-4:hover,
+.effect-4:focus-visible {
+  transform: scale(110%);
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+}
+
+.effect-5:hover,
+.effect-5:focus-visible {
+  letter-spacing: normal;
+  background-color: violet;
+}
+
+.effect-6:hover,
+.effect-6:focus-visible {
+  border-color: #0004ff;
+  border-width: 0dvhS;
+}
 
 /* ---------- PC: 1024px and up ---------- */
 @media (min-width: 1024px) {
